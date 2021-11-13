@@ -1,0 +1,28 @@
+package ca.bazlur.visualizer.config;
+
+import ca.bazlur.visualizer.feed.service.RawDBDemoGeoIPLocationServiceImpl;
+import ca.bazlur.visualizer.feed.service.AbuseConfidenceScoreFeedService;
+import ca.bazlur.visualizer.job.AbuseScoreConfidenceFetchingJob;
+import ca.bazlur.visualizer.repo.AbuseConfidenceScoreRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@Configuration
+@EnableScheduling
+@AllArgsConstructor
+public class SchedulerConfig {
+    private final AbuseConfidenceScoreFeedService confidenceScoreService;
+    private final AbuseConfidenceScoreRepository abuseConfidenceScoreRepository;
+    private final RawDBDemoGeoIPLocationServiceImpl rawDBDemoGeoIPLocationService;
+
+    @Bean
+    @ConditionalOnProperty(value = "jobs.enabled", havingValue = "true")
+    public AbuseScoreConfidenceFetchingJob job() {
+
+        return new AbuseScoreConfidenceFetchingJob(confidenceScoreService,
+            abuseConfidenceScoreRepository, rawDBDemoGeoIPLocationService);
+    }
+}
