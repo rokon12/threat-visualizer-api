@@ -37,7 +37,7 @@ public class UserService implements UserDetailsService {
         }
 
         if (request.getAuthorities() == null) {
-            request.setAuthorities(Set.of(Role.USER_ADMIN));
+            request.setAuthorities(Set.of(Role.ROLE_USER));
         }
 
         var user = User.builder()

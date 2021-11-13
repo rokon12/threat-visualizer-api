@@ -23,7 +23,7 @@ import java.util.Objects;
 @Entity
 @Builder
 public class Role implements GrantedAuthority {
-    public static final String USER_ADMIN = "USER_ADMIN";
+    public static final String ROLE_USER = "ROLE_USER";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -29,6 +29,7 @@ public class AbuseScoreConfidenceFetchingJob {
                                                   .toList();
 
         abuseConfidenceScoreRepository.saveAllAndFlush(abuseConfidenceScores);
+        log.info("Finished fetching black listed ip");
     }
 
     private AbuseConfidenceScore toAbuseConfidenceScore(final AbuseConfidenceScoreDTO dto) {

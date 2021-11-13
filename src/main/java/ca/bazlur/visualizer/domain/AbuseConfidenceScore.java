@@ -8,9 +8,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -21,6 +28,7 @@ import java.util.Objects;
 @ToString
 @Getter
 @Setter
+@EntityListeners(AuditingEntityListener.class)
 public class AbuseConfidenceScore {
     @Id
     private String ipAddress;
@@ -31,6 +39,18 @@ public class AbuseConfidenceScore {
     private double longitude;
     private double latitude;
     private OffsetDateTime lastReportedAt;
+
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedAt;
+
+    @CreatedBy
+    private String createdBy;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
 
     @Override
     public boolean equals(final Object o) {
