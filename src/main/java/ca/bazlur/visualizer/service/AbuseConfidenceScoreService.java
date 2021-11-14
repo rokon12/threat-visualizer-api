@@ -1,9 +1,7 @@
 package ca.bazlur.visualizer.service;
 
-import ca.bazlur.visualizer.domain.AbuseConfidenceScore;
-
-import java.util.List;
+import ca.bazlur.visualizer.domain.dto.GeoJsonView;
 
 public interface AbuseConfidenceScoreService {
-    List<AbuseConfidenceScore> findAll();
+    GeoJsonView getAbuseConfidenceScore(final int page, final int size, final String sortBy);
 }
