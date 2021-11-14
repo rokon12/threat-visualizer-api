@@ -60,6 +60,7 @@ public class User implements UserDetails {
 
     @OneToMany(fetch = FetchType.EAGER)
     @ToString.Exclude
+    @Builder.Default
     private Set<Role> authorities = new HashSet<>();
 
     @Override

@@ -1,6 +1,6 @@
 package ca.bazlur.visualizer.feed.service;
 
-import ca.bazlur.visualizer.feed.dto.GeoIPLocationDTO;
+import ca.bazlur.visualizer.domain.dto.GeoIPLocationDTO;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import lombok.extern.slf4j.Slf4j;

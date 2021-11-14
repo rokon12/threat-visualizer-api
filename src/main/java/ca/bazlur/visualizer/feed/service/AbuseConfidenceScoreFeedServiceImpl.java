@@ -1,6 +1,9 @@
 package ca.bazlur.visualizer.feed.service;
 
-import ca.bazlur.visualizer.feed.dto.AbuseConfidenceScoreData;
+import ca.bazlur.visualizer.domain.AbuseConfidenceScore;
+import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreDTO;
+import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreData;
+import ca.bazlur.visualizer.domain.mapper.DataMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -12,6 +15,8 @@ import org.springframework.web.client.RestTemplate;
 public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScoreFeedService {
 
     private final RestTemplate restTemplate;
+    private final DataMapper mapStructMapper;
+    private final RawDBDemoGeoIPLocationService rawDBDemoGeoIPLocationService;
 
     @Value("${abuse.db.api.key}")
     private String apiKey;
@@ -19,8 +24,12 @@ public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScore
     @Value("${abuse.db.api.url}")
     private String abuseIPDBUrl;
 
-    public AbuseConfidenceScoreFeedServiceImpl(final RestTemplate restTemplate) {
+    public AbuseConfidenceScoreFeedServiceImpl(final RestTemplate restTemplate,
+                                               final DataMapper mapStructMapper,
+                                               final RawDBDemoGeoIPLocationService rawDBDemoGeoIPLocationService) {
         this.restTemplate = restTemplate;
+        this.mapStructMapper = mapStructMapper;
+        this.rawDBDemoGeoIPLocationService = rawDBDemoGeoIPLocationService;
     }
 
     @Override
@@ -33,5 +42,20 @@ public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScore
         var forEntity
             = restTemplate.exchange(abuseIPDBUrl, HttpMethod.GET, httpEntity, AbuseConfidenceScoreData.class);
         return forEntity.getBody();
+    }
+
+    public AbuseConfidenceScore mapIPAddressToGeoLocation(final AbuseConfidenceScoreDTO dto) {
+        var abuseConfidenceScore = mapStructMapper.toAbuseConfidenceScore(dto);
+        var geoIpLocation = rawDBDemoGeoIPLocationService.getLocation(dto.getIpAddress());
+
+        if (geoIpLocation.isPresent()) {
+            var geoIPLocation = geoIpLocation.get();
+            abuseConfidenceScore.setCity(geoIPLocation.getCity());
+            abuseConfidenceScore.setCountry(geoIPLocation.getCountry());
+            abuseConfidenceScore.setLongitude(geoIPLocation.getLongitude());
+            abuseConfidenceScore.setLatitude(geoIPLocation.getLatitude());
+        }
+
+        return abuseConfidenceScore;
     }
 }

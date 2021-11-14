@@ -1,4 +1,4 @@
-package ca.bazlur.visualizer.feed.dto;
+package ca.bazlur.visualizer.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

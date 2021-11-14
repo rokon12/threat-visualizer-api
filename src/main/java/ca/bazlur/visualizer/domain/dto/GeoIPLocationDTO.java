@@ -1,4 +1,4 @@
-package ca.bazlur.visualizer.feed.dto;
+package ca.bazlur.visualizer.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

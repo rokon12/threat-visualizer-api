@@ -1,9 +1,10 @@
 package ca.bazlur.visualizer.service;
 
 import ca.bazlur.visualizer.domain.Role;
-import ca.bazlur.visualizer.domain.User;
 import ca.bazlur.visualizer.domain.dto.CreateUserRequest;
 import ca.bazlur.visualizer.domain.dto.UserView;
+import ca.bazlur.visualizer.domain.mapper.DataMapper;
+import ca.bazlur.visualizer.repo.RoleRepository;
 import ca.bazlur.visualizer.repo.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.ValidationException;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -25,6 +27,8 @@ public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final DataMapper mapper;
+    private final RoleRepository roleRepository;
 
     @Transactional
     public UserView create(CreateUserRequest request) {
@@ -36,23 +40,23 @@ public class UserService implements UserDetailsService {
             throw new ValidationException("Passwords don't match!");
         }
 
-        if (request.getAuthorities() == null) {
-            request.setAuthorities(Set.of(Role.ROLE_USER));
+        var user = mapper.toUser(request);
+        user.setAuthorities(getRoles(request));
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+
+        return mapper.toUserView(userRepository.save(user));
+    }
+
+    private Set<Role> getRoles(final CreateUserRequest request) {
+        var authorities = request.getAuthorities();
+        if (authorities == null || authorities.isEmpty()) {
+            authorities = Set.of(Role.ROLE_USER);
         }
 
-        var user = User.builder()
-                       .username(request.getUsername())
-                       .fullName(request.getFullName())
-                       .authorities(request.getAuthorities().stream().map(name -> Role.builder().authority(name).build()).collect(Collectors.toSet()))
-                       .build();
-
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
-        var savedUser = userRepository.save(user);
-        return UserView.builder()
-                       .id(savedUser.getId())
-                       .username(savedUser.getUsername())
-                       .fullName(savedUser.getFullName())
-                       .build();
+        return authorities.stream().map(roleRepository::findByAuthority)
+                          .filter(Optional::isPresent)
+                          .map(Optional::get)
+                          .collect(Collectors.toSet());
     }
 
     @Override
