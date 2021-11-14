@@ -18,7 +18,6 @@ class RawDBDemoGeoIPLocationServiceImplTest {
     @Test
     void getLocation() {
         var location = rawDBDemoGeoIPLocationService.getLocation("174.95.183.30");
-        System.out.println("location = " + location);
         assertTrue(location.isPresent());
 
         var geoIPLocationDTO = location.get();

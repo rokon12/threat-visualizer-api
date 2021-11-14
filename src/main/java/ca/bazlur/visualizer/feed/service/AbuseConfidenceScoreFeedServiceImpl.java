@@ -5,11 +5,11 @@ import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreDTO;
 import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreData;
 import ca.bazlur.visualizer.domain.mapper.DataMapper;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
+import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.web.client.RestTemplate;
+
+import java.net.URI;
 
 @Service
 public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScoreFeedService {
@@ -34,14 +34,15 @@ public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScore
 
     @Override
     public AbuseConfidenceScoreData getBlackListedIps() {
-        var headers = new LinkedMultiValueMap<String, String>();
-        headers.add("Accept", "application/json");
-        headers.add("Key", apiKey);
+        var requestEntity = RequestEntity
+            .get(URI.create(abuseIPDBUrl))
+            .headers(httpHeaders -> {
+                httpHeaders.add("Accept", "application/json");
+                httpHeaders.add("Key", apiKey);
+            }).build();
 
-        var httpEntity = new HttpEntity<AbuseConfidenceScoreData>(headers);
-        var forEntity
-            = restTemplate.exchange(abuseIPDBUrl, HttpMethod.GET, httpEntity, AbuseConfidenceScoreData.class);
-        return forEntity.getBody();
+        var response = restTemplate.exchange(requestEntity, AbuseConfidenceScoreData.class);
+        return response.getBody();
     }
 
     public AbuseConfidenceScore mapIPAddressToGeoLocation(final AbuseConfidenceScoreDTO dto) {
