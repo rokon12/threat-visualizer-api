@@ -1,7 +1,9 @@
 # threat-visualizer-api
 
 
-# Test Coverage 
-[](https://raw.githubusercontent.com/rokon12/threat-visualizer-api/master/.github/badges/jacoco.svg?token=AADIYEIDZARFJWWNKSFHFTLBTHYLA)
+### Test Coverage Report
+
+</br>![Coverage](.github/badges/jacoco.svg)
+
 
 more on it later...
