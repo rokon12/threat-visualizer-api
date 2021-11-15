@@ -41,6 +41,7 @@ public class DataMapperImpl implements DataMapper {
         } else {
             return UserView
                 .builder()
+                .id(user.getId())
                 .fullName(user.getFullName())
                 .username(user.getUsername())
                 .build();

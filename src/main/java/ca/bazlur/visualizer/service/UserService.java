@@ -53,7 +53,8 @@ public class UserService implements UserDetailsService {
             authorities = Set.of(Role.ROLE_USER);
         }
 
-        return authorities.stream().map(roleRepository::findByAuthority)
+        return authorities.stream()
+                          .map(roleRepository::findByAuthority)
                           .filter(Optional::isPresent)
                           .map(Optional::get)
                           .collect(Collectors.toSet());

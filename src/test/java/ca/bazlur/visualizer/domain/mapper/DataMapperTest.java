@@ -54,6 +54,7 @@ class DataMapperTest {
                        .fullName("Full name")
                        .build();
         var userView = mapper.toUserView(user);
+        assertEquals(user.getId(), userView.getId());
         assertEquals(user.getUsername(), userView.getUsername());
         assertEquals(user.getFullName(), userView.getFullName());
     }
