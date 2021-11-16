@@ -11,6 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import java.time.OffsetDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -20,7 +21,7 @@ class DataMapperTest {
     private DataMapper mapper;
 
     @Test
-    void testToAbuseConfidenceScore() {
+    void testToAbuseConfidenceScoreSuccess() {
         var now = OffsetDateTime.now();
         var abuseConfidenceScoreDTO = AbuseConfidenceScoreDTO.builder()
                                                              .countryCode("BR")
@@ -37,6 +38,12 @@ class DataMapperTest {
     }
 
     @Test
+    void testToAbuseConfidenceScore_givenNull_shouldReturnNull() {
+        var abuseConfidenceScore = mapper.toAbuseConfidenceScore(null);
+        assertNull(abuseConfidenceScore);
+    }
+
+    @Test
     void testToUser() {
         var userRequest = CreateUserRequest.builder()
                                            .username("username@example.ca")
@@ -45,6 +52,12 @@ class DataMapperTest {
         var user = mapper.toUser(userRequest);
         assertEquals(userRequest.getUsername(), user.getUsername());
         assertEquals(userRequest.getFullName(), user.getFullName());
+    }
+
+    @Test
+    void testToUser_givenNull_shouldReturnNull() {
+        var user = mapper.toUser(null);
+        assertNull(user);
     }
 
     @Test
@@ -57,5 +70,11 @@ class DataMapperTest {
         assertEquals(user.getId(), userView.getId());
         assertEquals(user.getUsername(), userView.getUsername());
         assertEquals(user.getFullName(), userView.getFullName());
+    }
+
+    @Test
+    void testToUserView_givenNull_shouldReturnNull() {
+        var userView = mapper.toUserView(null);
+        assertNull(userView);
     }
 }
