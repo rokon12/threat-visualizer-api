@@ -2,18 +2,27 @@ package ca.bazlur.visualizer.web;
 
 import ca.bazlur.visualizer.domain.AbuseConfidenceScore;
 import ca.bazlur.visualizer.repo.AbuseConfidenceScoreRepository;
+import ca.bazlur.visualizer.util.JsonHelper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static org.hamcrest.Matchers.hasSize;
@@ -30,11 +39,17 @@ class AbuseConfidenceScoreResourceTest {
     private final MockMvc mockMvc;
     private final AbuseConfidenceScoreRepository abuseConfidenceScoreRepository;
 
+    @Value("classpath:data/abuse_confidence_score.json")
+    Resource resourceFile;
+
+    private final ObjectMapper objectMapper;
+
     @Autowired
     AbuseConfidenceScoreResourceTest(final MockMvc mockMvc,
-                                     final AbuseConfidenceScoreRepository abuseConfidenceScoreRepository) {
+                                     final AbuseConfidenceScoreRepository abuseConfidenceScoreRepository, final ObjectMapper objectMapper) {
         this.mockMvc = mockMvc;
         this.abuseConfidenceScoreRepository = abuseConfidenceScoreRepository;
+        this.objectMapper = objectMapper;
     }
 
     @BeforeEach
@@ -61,6 +76,15 @@ class AbuseConfidenceScoreResourceTest {
                                     .longitude(4.9392)
                                     .build()));
 
+    }
+
+    private void addTestData() throws IOException {
+        var json = Files.readString(Path.of(resourceFile.getURI()));
+        var dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ssX");
+        var abuseConfidenceScores
+            = JsonHelper.fromJsonWithOffsetDateTimeAndDateTimeFormatter(objectMapper, dateTimeFormatter, json, new TypeReference<List<AbuseConfidenceScore>>() {
+        });
+        abuseConfidenceScoreRepository.saveAllAndFlush(abuseConfidenceScores);
     }
 
     @AfterEach
@@ -90,6 +114,20 @@ class AbuseConfidenceScoreResourceTest {
             .andExpect(jsonPath("$.features[1].properties.score").value(100))
             .andExpect(jsonPath("$.features[1].properties.city").value("Amsterdam"))
             .andExpect(jsonPath("$.features[1].properties.ip").value("161.35.82.195"))
+            .andReturn();
+    }
+
+    @Test
+    void testGetScoreByPageSize() throws Exception {
+        addTestData();
+
+        this.mockMvc
+            .perform(get("/api/v1/abuse-confidence-score?page=0&size=10&sortBy=country")
+                .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.type").value("FeatureCollection"))
+            .andExpect(jsonPath("$.features", hasSize(10)))
+            .andExpect(jsonPath("$.features[0].properties.country").value("Brazil"))
             .andReturn();
     }
 }

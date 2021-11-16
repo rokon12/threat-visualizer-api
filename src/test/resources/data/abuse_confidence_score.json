@@ -1,0 +1,1002 @@
+[
+  {
+    "ipAddress": "46.17.107.57",
+    "city": "New York",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:17:01-05",
+    "latitude": 40.7488,
+    "longitude": -73.9883,
+    "score": 100
+  },
+  {
+    "ipAddress": "137.184.23.91",
+    "city": "North Bergen",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:17:00-05",
+    "latitude": 40.793,
+    "longitude": -74.0247,
+    "score": 100
+  },
+  {
+    "ipAddress": "90.179.148.19",
+    "city": "Chrastava",
+    "country": "Czechia",
+    "countryCode": "CZ",
+    "lastReportedAt": "2021-11-15 19:16:56-05",
+    "latitude": 50.8172,
+    "longitude": 14.985,
+    "score": 100
+  },
+  {
+    "ipAddress": "159.65.157.154",
+    "city": "Bengaluru",
+    "country": "India",
+    "countryCode": "IN",
+    "lastReportedAt": "2021-11-15 19:16:55-05",
+    "latitude": 12.9634,
+    "longitude": 77.5855,
+    "score": 100
+  },
+  {
+    "ipAddress": "8.218.122.255",
+    "city": "Central",
+    "country": "Hong Kong",
+    "countryCode": "HK",
+    "lastReportedAt": "2021-11-15 19:16:55-05",
+    "latitude": 22.2908,
+    "longitude": 114.1501,
+    "score": 100
+  },
+  {
+    "ipAddress": "95.171.192.38",
+    "city": "Tarnowskie Gory",
+    "country": "Poland",
+    "countryCode": "PL",
+    "lastReportedAt": "2021-11-15 19:16:54-05",
+    "latitude": 50.4526,
+    "longitude": 18.8571,
+    "score": 100
+  },
+  {
+    "ipAddress": "27.115.124.106",
+    "city": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:50-05",
+    "latitude": 39.9285,
+    "longitude": 116.385,
+    "score": 100
+  },
+  {
+    "ipAddress": "209.14.136.243",
+    "city": "São Paulo",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lastReportedAt": "2021-11-15 19:16:49-05",
+    "latitude": -23.5335,
+    "longitude": -46.6359,
+    "score": 100
+  },
+  {
+    "ipAddress": "84.17.50.170",
+    "city": "London",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lastReportedAt": "2021-11-15 19:16:47-05",
+    "latitude": 51.5016,
+    "longitude": -0.0149,
+    "score": 100
+  },
+  {
+    "ipAddress": "87.103.214.197",
+    "city": "Kemerovo",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:16:46-05",
+    "latitude": 55.3662,
+    "longitude": 86.0805,
+    "score": 100
+  },
+  {
+    "ipAddress": "210.101.91.152",
+    "city": "Seongnam-si",
+    "country": "South Korea",
+    "countryCode": "KR",
+    "lastReportedAt": "2021-11-15 19:16:43-05",
+    "latitude": 37.4331,
+    "longitude": 127.1377,
+    "score": 100
+  },
+  {
+    "ipAddress": "103.44.54.23",
+    "city": "Delhi",
+    "country": "India",
+    "countryCode": "IN",
+    "lastReportedAt": "2021-11-15 19:16:41-05",
+    "latitude": 28.6542,
+    "longitude": 77.2373,
+    "score": 100
+  },
+  {
+    "ipAddress": "8.140.183.163",
+    "city": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:40-05",
+    "latitude": 39.9285,
+    "longitude": 116.385,
+    "score": 100
+  },
+  {
+    "ipAddress": "45.95.169.127",
+    "city": "Sisak",
+    "country": "Croatia",
+    "countryCode": "HR",
+    "lastReportedAt": "2021-11-15 19:16:39-05",
+    "latitude": 45.4675,
+    "longitude": 16.3868,
+    "score": 100
+  },
+  {
+    "ipAddress": "221.131.165.33",
+    "city": "Xinghua",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:36-05",
+    "latitude": 34.2649,
+    "longitude": 117.4509,
+    "score": 100
+  },
+  {
+    "ipAddress": "122.160.48.190",
+    "city": "Delhi",
+    "country": "India",
+    "countryCode": "IN",
+    "lastReportedAt": "2021-11-15 19:16:36-05",
+    "latitude": 28.6542,
+    "longitude": 77.2373,
+    "score": 100
+  },
+  {
+    "ipAddress": "94.232.46.202",
+    "city": "Perm",
+    "country": "Russia",
+    "countryCode": "PL",
+    "lastReportedAt": "2021-11-15 19:16:33-05",
+    "latitude": 58.0041,
+    "longitude": 56.2397,
+    "score": 100
+  },
+  {
+    "ipAddress": "91.123.24.84",
+    "city": "Golitsyno",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:16:32-05",
+    "latitude": 55.6021,
+    "longitude": 36.9812,
+    "score": 100
+  },
+  {
+    "ipAddress": "209.141.62.185",
+    "city": "Las Vegas",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:30-05",
+    "latitude": 36.102,
+    "longitude": -115.1447,
+    "score": 100
+  },
+  {
+    "ipAddress": "45.148.10.241",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:16:30-05",
+    "latitude": 52.3759,
+    "longitude": 4.8975,
+    "score": 100
+  },
+  {
+    "ipAddress": "139.59.252.235",
+    "city": "Singapore",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "lastReportedAt": "2021-11-15 19:16:29-05",
+    "latitude": 1.3078,
+    "longitude": 103.6818,
+    "score": 100
+  },
+  {
+    "ipAddress": "182.135.64.12",
+    "city": "Chaoyang",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:28-05",
+    "latitude": 34.859,
+    "longitude": 104.1988,
+    "score": 100
+  },
+  {
+    "ipAddress": "170.106.115.55",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:28-05",
+    "latitude": 37.353,
+    "longitude": -121.9543,
+    "score": 100
+  },
+  {
+    "ipAddress": "176.236.115.74",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lastReportedAt": "2021-11-15 19:16:27-05",
+    "latitude": 41.0197,
+    "longitude": 28.9757,
+    "score": 100
+  },
+  {
+    "ipAddress": "143.198.139.22",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:26-05",
+    "latitude": 37.3931,
+    "longitude": -121.962,
+    "score": 100
+  },
+  {
+    "ipAddress": "41.33.52.43",
+    "city": "Johannesburg",
+    "country": "South Africa",
+    "countryCode": "EG",
+    "lastReportedAt": "2021-11-15 19:16:26-05",
+    "latitude": -26.3811,
+    "longitude": 27.8376,
+    "score": 100
+  },
+  {
+    "ipAddress": "216.158.96.251",
+    "city": "Jönköping",
+    "country": "Sweden",
+    "countryCode": "SE",
+    "lastReportedAt": "2021-11-15 19:16:24-05",
+    "latitude": 57.7963,
+    "longitude": 14.1376,
+    "score": 100
+  },
+  {
+    "ipAddress": "104.241.209.127",
+    "city": "New Auburn",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:24-05",
+    "latitude": 45.2359,
+    "longitude": -91.5247,
+    "score": 100
+  },
+  {
+    "ipAddress": "222.185.231.246",
+    "city": "Changzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:22-05",
+    "latitude": 31.7685,
+    "longitude": 119.9527,
+    "score": 100
+  },
+  {
+    "ipAddress": "47.100.76.13",
+    "city": "Shanghai",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:22-05",
+    "latitude": 31.0442,
+    "longitude": 121.4054,
+    "score": 100
+  },
+  {
+    "ipAddress": "8.218.61.47",
+    "city": "Central",
+    "country": "Hong Kong",
+    "countryCode": "SG",
+    "lastReportedAt": "2021-11-15 19:16:21-05",
+    "latitude": 22.2908,
+    "longitude": 114.1501,
+    "score": 100
+  },
+  {
+    "ipAddress": "209.141.58.55",
+    "city": "Las Vegas",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:20-05",
+    "latitude": 36.102,
+    "longitude": -115.1447,
+    "score": 100
+  },
+  {
+    "ipAddress": "80.82.77.33",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "SC",
+    "lastReportedAt": "2021-11-15 19:16:20-05",
+    "latitude": 52.3759,
+    "longitude": 4.8975,
+    "score": 100
+  },
+  {
+    "ipAddress": "117.248.249.70",
+    "city": "Agrod",
+    "country": "India",
+    "countryCode": "IN",
+    "lastReportedAt": "2021-11-15 19:16:19-05",
+    "latitude": 23.1615,
+    "longitude": 76.2268,
+    "score": 100
+  },
+  {
+    "ipAddress": "83.96.6.210",
+    "city": "Kuwait city",
+    "country": "Kuwait",
+    "countryCode": "KW",
+    "lastReportedAt": "2021-11-15 19:16:18-05",
+    "latitude": 29.3645,
+    "longitude": 47.9889,
+    "score": 100
+  },
+  {
+    "ipAddress": "35.219.62.239",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lastReportedAt": "2021-11-15 19:16:18-05",
+    "latitude": -6.1741,
+    "longitude": 106.8296,
+    "score": 100
+  },
+  {
+    "ipAddress": "67.205.138.198",
+    "city": "North Bergen",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:17-05",
+    "latitude": 40.793,
+    "longitude": -74.0247,
+    "score": 100
+  },
+  {
+    "ipAddress": "64.227.77.142",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:16:17-05",
+    "latitude": 52.352,
+    "longitude": 4.9392,
+    "score": 100
+  },
+  {
+    "ipAddress": "159.65.101.220",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:16-05",
+    "latitude": 37.3417,
+    "longitude": -121.9753,
+    "score": 100
+  },
+  {
+    "ipAddress": "162.62.191.231",
+    "city": "Moscow",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:16:14-05",
+    "latitude": 55.7483,
+    "longitude": 37.6171,
+    "score": 100
+  },
+  {
+    "ipAddress": "159.65.107.152",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:12-05",
+    "latitude": 37.3417,
+    "longitude": -121.9753,
+    "score": 100
+  },
+  {
+    "ipAddress": "8.218.40.72",
+    "city": "Central",
+    "country": "Hong Kong",
+    "countryCode": "SG",
+    "lastReportedAt": "2021-11-15 19:16:11-05",
+    "latitude": 22.2908,
+    "longitude": 114.1501,
+    "score": 100
+  },
+  {
+    "ipAddress": "193.56.29.154",
+    "city": "Warsaw",
+    "country": "Poland",
+    "countryCode": "GB",
+    "lastReportedAt": "2021-11-15 19:16:10-05",
+    "latitude": 52.2484,
+    "longitude": 21.0026,
+    "score": 100
+  },
+  {
+    "ipAddress": "209.141.59.77",
+    "city": "Las Vegas",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:09-05",
+    "latitude": 36.102,
+    "longitude": -115.1447,
+    "score": 100
+  },
+  {
+    "ipAddress": "8.218.75.133",
+    "city": "Central",
+    "country": "Hong Kong",
+    "countryCode": "HK",
+    "lastReportedAt": "2021-11-15 19:16:09-05",
+    "latitude": 22.2908,
+    "longitude": 114.1501,
+    "score": 100
+  },
+  {
+    "ipAddress": "212.156.80.138",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lastReportedAt": "2021-11-15 19:16:08-05",
+    "latitude": 41.0197,
+    "longitude": 28.9757,
+    "score": 100
+  },
+  {
+    "ipAddress": "205.185.120.183",
+    "city": "Las Vegas",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:08-05",
+    "latitude": 36.102,
+    "longitude": -115.1447,
+    "score": 100
+  },
+  {
+    "ipAddress": "165.227.224.201",
+    "city": "London",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lastReportedAt": "2021-11-15 19:16:08-05",
+    "latitude": 51.5368,
+    "longitude": -0.6718,
+    "score": 100
+  },
+  {
+    "ipAddress": "170.130.187.54",
+    "city": "Los Angeles",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:07-05",
+    "latitude": 34.0485,
+    "longitude": -118.2529,
+    "score": 100
+  },
+  {
+    "ipAddress": "159.65.109.17",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:05-05",
+    "latitude": 37.3417,
+    "longitude": -121.9753,
+    "score": 100
+  },
+  {
+    "ipAddress": "209.141.33.57",
+    "city": "Las Vegas",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:04-05",
+    "latitude": 36.102,
+    "longitude": -115.1447,
+    "score": 100
+  },
+  {
+    "ipAddress": "185.241.111.33",
+    "city": "Veliky Novgorod",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:16:04-05",
+    "latitude": 58.511,
+    "longitude": 31.3251,
+    "score": 100
+  },
+  {
+    "ipAddress": "61.222.118.85",
+    "city": "New Taipei",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "lastReportedAt": "2021-11-15 19:16:03-05",
+    "latitude": 24.9389,
+    "longitude": 121.5422,
+    "score": 100
+  },
+  {
+    "ipAddress": "221.131.165.56",
+    "city": "Xinghua",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:16:02-05",
+    "latitude": 34.2649,
+    "longitude": 117.4509,
+    "score": 100
+  },
+  {
+    "ipAddress": "167.71.196.14",
+    "city": "Singapore",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "lastReportedAt": "2021-11-15 19:16:02-05",
+    "latitude": 1.3078,
+    "longitude": 103.6818,
+    "score": 100
+  },
+  {
+    "ipAddress": "146.88.240.4",
+    "city": "Southfield",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:16:01-05",
+    "latitude": 42.4734,
+    "longitude": -83.2219,
+    "score": 100
+  },
+  {
+    "ipAddress": "82.80.41.234",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "countryCode": "IL",
+    "lastReportedAt": "2021-11-15 19:16:00-05",
+    "latitude": 32.0668,
+    "longitude": 34.7649,
+    "score": 100
+  },
+  {
+    "ipAddress": "159.89.116.95",
+    "city": "Toronto",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lastReportedAt": "2021-11-15 19:15:58-05",
+    "latitude": 43.6547,
+    "longitude": -79.3623,
+    "score": 100
+  },
+  {
+    "ipAddress": "14.140.91.51",
+    "city": "Gurgaon",
+    "country": "India",
+    "countryCode": "IN",
+    "lastReportedAt": "2021-11-15 19:15:58-05",
+    "latitude": 28.4597,
+    "longitude": 77.0282,
+    "score": 100
+  },
+  {
+    "ipAddress": "183.238.0.242",
+    "city": "Shenzhen",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:56-05",
+    "latitude": 22.5318,
+    "longitude": 114.1374,
+    "score": 100
+  },
+  {
+    "ipAddress": "120.35.26.129",
+    "city": "Fuzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:55-05",
+    "latitude": 26.0614,
+    "longitude": 119.3061,
+    "score": 100
+  },
+  {
+    "ipAddress": "192.241.204.142",
+    "city": "San Francisco",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:54-05",
+    "latitude": 37.7308,
+    "longitude": -122.3838,
+    "score": 100
+  },
+  {
+    "ipAddress": "85.143.106.77",
+    "city": "Moscow",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:15:54-05",
+    "latitude": 55.7483,
+    "longitude": 37.6171,
+    "score": 100
+  },
+  {
+    "ipAddress": "165.22.54.219",
+    "city": "Singapore",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "lastReportedAt": "2021-11-15 19:15:53-05",
+    "latitude": 1.3078,
+    "longitude": 103.6818,
+    "score": 100
+  },
+  {
+    "ipAddress": "43.130.57.239",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:52-05",
+    "latitude": 37.353,
+    "longitude": -121.9543,
+    "score": 100
+  },
+  {
+    "ipAddress": "218.92.0.205",
+    "city": "Shanghai",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:50-05",
+    "latitude": 31.0442,
+    "longitude": 121.4054,
+    "score": 100
+  },
+  {
+    "ipAddress": "198.98.60.97",
+    "city": "Staten Island",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:50-05",
+    "latitude": 40.6063,
+    "longitude": -74.1774,
+    "score": 100
+  },
+  {
+    "ipAddress": "47.99.198.29",
+    "city": "Hangzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:50-05",
+    "latitude": 30.2994,
+    "longitude": 120.1612,
+    "score": 100
+  },
+  {
+    "ipAddress": "87.213.228.114",
+    "city": "Etten",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:15:47-05",
+    "latitude": 51.5688,
+    "longitude": 4.6484,
+    "score": 100
+  },
+  {
+    "ipAddress": "170.106.115.151",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:46-05",
+    "latitude": 37.353,
+    "longitude": -121.9543,
+    "score": 100
+  },
+  {
+    "ipAddress": "161.35.146.246",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:15:44-05",
+    "latitude": 52.352,
+    "longitude": 4.9392,
+    "score": 100
+  },
+  {
+    "ipAddress": "159.223.10.35",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:44-05",
+    "latitude": 52.352,
+    "longitude": 4.9392,
+    "score": 100
+  },
+  {
+    "ipAddress": "91.209.59.71",
+    "city": "St Petersburg",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:15:44-05",
+    "latitude": 59.8983,
+    "longitude": 30.2618,
+    "score": 100
+  },
+  {
+    "ipAddress": "41.169.72.6",
+    "city": "Norkem Park",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lastReportedAt": "2021-11-15 19:15:44-05",
+    "latitude": -26.048,
+    "longitude": 28.2154,
+    "score": 100
+  },
+  {
+    "ipAddress": "192.241.200.44",
+    "city": "San Francisco",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:43-05",
+    "latitude": 37.7308,
+    "longitude": -122.3838,
+    "score": 100
+  },
+  {
+    "ipAddress": "178.62.78.193",
+    "city": "London",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lastReportedAt": "2021-11-15 19:15:42-05",
+    "latitude": 51.5368,
+    "longitude": -0.6718,
+    "score": 100
+  },
+  {
+    "ipAddress": "164.132.83.83",
+    "city": "Hyères",
+    "country": "France",
+    "countryCode": "FR",
+    "lastReportedAt": "2021-11-15 19:15:42-05",
+    "latitude": 43.1242,
+    "longitude": 6.1252,
+    "score": 100
+  },
+  {
+    "ipAddress": "45.90.160.173",
+    "city": "Paris",
+    "country": "France",
+    "countryCode": "GB",
+    "lastReportedAt": "2021-11-15 19:15:42-05",
+    "latitude": 48.8323,
+    "longitude": 2.4075,
+    "score": 100
+  },
+  {
+    "ipAddress": "185.167.97.191",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:15:41-05",
+    "latitude": 52.352,
+    "longitude": 4.9392,
+    "score": 100
+  },
+  {
+    "ipAddress": "61.177.173.23",
+    "city": "Yangzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:39-05",
+    "latitude": 32.3972,
+    "longitude": 119.4358,
+    "score": 100
+  },
+  {
+    "ipAddress": "200.148.225.183",
+    "city": "Catanduva",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lastReportedAt": "2021-11-15 19:15:38-05",
+    "latitude": -21.1259,
+    "longitude": -48.9641,
+    "score": 100
+  },
+  {
+    "ipAddress": "128.14.128.179",
+    "city": "Los Angeles",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:37-05",
+    "latitude": 34.0544,
+    "longitude": -118.2441,
+    "score": 100
+  },
+  {
+    "ipAddress": "45.135.232.119",
+    "city": "Moscow",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lastReportedAt": "2021-11-15 19:15:37-05",
+    "latitude": 55.7483,
+    "longitude": 37.6171,
+    "score": 100
+  },
+  {
+    "ipAddress": "8.218.75.219",
+    "city": "Central",
+    "country": "Hong Kong",
+    "countryCode": "SG",
+    "lastReportedAt": "2021-11-15 19:15:37-05",
+    "latitude": 22.2908,
+    "longitude": 114.1501,
+    "score": 100
+  },
+  {
+    "ipAddress": "2.56.59.198",
+    "city": "Dulles",
+    "country": "United States",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:15:37-05",
+    "latitude": 39.0019,
+    "longitude": -77.4556,
+    "score": 100
+  },
+  {
+    "ipAddress": "193.118.53.133",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lastReportedAt": "2021-11-15 19:15:35-05",
+    "latitude": 52.3759,
+    "longitude": 4.8975,
+    "score": 100
+  },
+  {
+    "ipAddress": "27.115.124.10",
+    "city": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:33-05",
+    "latitude": 39.9285,
+    "longitude": 116.385,
+    "score": 100
+  },
+  {
+    "ipAddress": "27.115.124.9",
+    "city": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:33-05",
+    "latitude": 39.9285,
+    "longitude": 116.385,
+    "score": 100
+  },
+  {
+    "ipAddress": "148.233.9.130",
+    "city": "Campeche",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lastReportedAt": "2021-11-15 19:15:31-05",
+    "latitude": 19.8114,
+    "longitude": -90.4974,
+    "score": 100
+  },
+  {
+    "ipAddress": "27.115.124.108",
+    "city": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:31-05",
+    "latitude": 39.9285,
+    "longitude": 116.385,
+    "score": 100
+  },
+  {
+    "ipAddress": "128.134.30.40",
+    "city": "Jongno-gu",
+    "country": "South Korea",
+    "countryCode": "KR",
+    "lastReportedAt": "2021-11-15 19:15:30-05",
+    "latitude": 37.5794,
+    "longitude": 126.9754,
+    "score": 100
+  },
+  {
+    "ipAddress": "117.158.62.74",
+    "city": "Puyang Chengguanzhen",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:30-05",
+    "latitude": 35.7079,
+    "longitude": 115.0211,
+    "score": 100
+  },
+  {
+    "ipAddress": "43.133.1.191",
+    "city": "Tokyo",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lastReportedAt": "2021-11-15 19:15:30-05",
+    "latitude": 35.6887,
+    "longitude": 139.745,
+    "score": 100
+  },
+  {
+    "ipAddress": "36.110.228.254",
+    "city": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lastReportedAt": "2021-11-15 19:15:29-05",
+    "latitude": 39.9285,
+    "longitude": 116.385,
+    "score": 100
+  },
+  {
+    "ipAddress": "109.115.45.179",
+    "city": "Mornico al Serio",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lastReportedAt": "2021-11-15 19:15:28-05",
+    "latitude": 45.593,
+    "longitude": 9.8046,
+    "score": 100
+  },
+  {
+    "ipAddress": "80.82.77.139",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "SC",
+    "lastReportedAt": "2021-11-15 19:15:27-05",
+    "latitude": 52.3759,
+    "longitude": 4.8975,
+    "score": 100
+  },
+  {
+    "ipAddress": "137.184.36.36",
+    "city": "Santa Clara",
+    "country": "United States",
+    "countryCode": "US",
+    "lastReportedAt": "2021-11-15 19:15:25-05",
+    "latitude": 37.3931,
+    "longitude": -121.962,
+    "score": 100
+  },
+  {
+    "ipAddress": "212.156.87.154",
+    "city": "Trabzon",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lastReportedAt": "2021-11-15 19:15:24-05",
+    "latitude": 40.8945,
+    "longitude": 39.7973,
+    "score": 100
+  },
+  {
+    "ipAddress": "191.102.73.94",
+    "city": "Cubarral",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "lastReportedAt": "2021-11-15 19:15:24-05",
+    "latitude": 3.7941,
+    "longitude": -73.8408,
+    "score": 100
+  },
+  {
+    "ipAddress": "168.194.72.50",
+    "city": "Guatemala city",
+    "country": "Guatemala",
+    "countryCode": "GT",
+    "lastReportedAt": "2021-11-15 19:15:23-05",
+    "latitude": 14.6343,
+    "longitude": -90.5155,
+    "score": 100
+  }
+]

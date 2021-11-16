@@ -4,6 +4,7 @@ import ca.bazlur.visualizer.domain.AbuseConfidenceScore;
 import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreDTO;
 import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreData;
 import ca.bazlur.visualizer.domain.mapper.DataMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 
+@Slf4j
 @Service
 public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScoreFeedService {
 
@@ -50,11 +52,15 @@ public class AbuseConfidenceScoreFeedServiceImpl implements AbuseConfidenceScore
         var geoIpLocation = rawDBDemoGeoIPLocationService.getLocation(dto.getIpAddress());
 
         if (geoIpLocation.isPresent()) {
-            var geoIPLocation = geoIpLocation.get();
-            abuseConfidenceScore.setCity(geoIPLocation.getCity());
-            abuseConfidenceScore.setCountry(geoIPLocation.getCountry());
-            abuseConfidenceScore.setLongitude(geoIPLocation.getLongitude());
-            abuseConfidenceScore.setLatitude(geoIPLocation.getLatitude());
+            try {
+                var geoIPLocation = geoIpLocation.get();
+                abuseConfidenceScore.setCity(geoIPLocation.getCity());
+                abuseConfidenceScore.setCountry(geoIPLocation.getCountry());
+                abuseConfidenceScore.setLongitude(geoIPLocation.getLongitude());
+                abuseConfidenceScore.setLatitude(geoIPLocation.getLatitude());
+            } catch (Exception e) {
+                log.info("Failed to get geo location for {}", dto.getIpAddress());
+            }
         }
 
         return abuseConfidenceScore;

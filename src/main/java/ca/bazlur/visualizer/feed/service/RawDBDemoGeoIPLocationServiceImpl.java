@@ -33,11 +33,11 @@ public class RawDBDemoGeoIPLocationServiceImpl implements RawDBDemoGeoIPLocation
             var country = response.getCountry().getName();
             var cityName = response.getCity().getName();
             var latitude =
-                response.getLocation().getLatitude().toString();
+                response.getLocation().getLatitude();
             var longitude =
-                response.getLocation().getLongitude().toString();
+                response.getLocation().getLongitude();
             var geoIPLocation = new GeoIPLocationDTO(ip, cityName, country,
-                Double.parseDouble(latitude), Double.parseDouble(longitude));
+                latitude, longitude);
 
             return Optional.of(geoIPLocation);
         } catch (IOException | GeoIp2Exception e) {

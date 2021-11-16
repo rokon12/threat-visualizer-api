@@ -61,7 +61,7 @@ public class User implements UserDetails {
     @LastModifiedBy
     private String lastModifiedBy;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name = "USER_AUTHORITIES", joinColumns = @JoinColumn(name = "USER_ID"),
         inverseJoinColumns = @JoinColumn(name = "AUTHORITIES_ID"))
     @ToString.Exclude

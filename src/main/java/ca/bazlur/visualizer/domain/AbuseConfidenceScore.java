@@ -14,6 +14,7 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Id;
@@ -38,6 +39,8 @@ public class AbuseConfidenceScore {
     private String city;
     private double longitude;
     private double latitude;
+
+    @Column(name = "lastReportedAt", columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private OffsetDateTime lastReportedAt;
 
     @CreatedDate

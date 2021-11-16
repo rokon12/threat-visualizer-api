@@ -19,6 +19,8 @@ public class AbuseScoreConfidenceFetchingJob {
         var blackListedIps = confidenceScoreService.getBlackListedIps();
         log.info("Total black listed ip fetched: {}", blackListedIps.getData().size());
 
+
+
         var abuseConfidenceScores = blackListedIps.getData()
                                                   .parallelStream()
                                                   .map(confidenceScoreService::mapIPAddressToGeoLocation)
