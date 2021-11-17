@@ -11,8 +11,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
-
 @Slf4j
 @Component
 @AllArgsConstructor
@@ -33,13 +31,11 @@ public class DatabaseInitializer implements ApplicationListener<ApplicationReady
         try {
             userService.loadUserByUsername(username);
         } catch (UsernameNotFoundException ex) {
-            var roles = Set.of(Role.ROLE_USER);
             userService.create(CreateUserRequest.builder()
                                                 .username(username)
                                                 .fullName(("Bazlur Rahman"))
                                                 .password("Test123")
                                                 .rePassword("Test123")
-                                                .authorities(roles)
                                                 .build());
         }
     }
