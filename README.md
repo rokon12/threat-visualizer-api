@@ -4,10 +4,10 @@ This is a simple backend application that fetches abuse IP threat score and find
 It publishes a restful API, which can be used for displaying information in, such as on a map, and then further sort & paged etc.
 It also provides rich endpoints to search for information.
 
-The application works in three phases. First, it fetches blacklisted IPs with associated abuse scores from a third-party service called: abuseipdb.com.
+The application works in three phases. First, it fetches blacklisted IPs with associated abuse scores from a third-party service called: [abuseipdb.com](https://www.abuseipdb.com/).
 The website has constraints on how many requests one particular user can make at a time. So we figured to use a corn job to run it periodically so that it doesn't hit too many requests.
 
-Once a request is processed through a scheduled job, it then finds the geolocation based on the IP address using a local geolocation database. The database is available on maxmind.com. Then the information is stored in a local SQL database.
+Once a request is processed through a scheduled job, it then finds the geolocation based on the IP address using a local geolocation database. The database is available on [maxmind.com](https://www.maxmind.com/en/home). Then the information is stored in a local SQL database.
 
 Finally, the information is then exposed through a rest endpoint so that the application user consumes it. The APIs are protected.  So the authentication is required.
 
