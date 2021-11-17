@@ -29,4 +29,25 @@ Finally, the information is then exposed through a rest endpoint so that the app
 - GitHub Action (CI/CD)
 - SonarQube (Static Analysis)
 
-# How to Start
+## Getting Started
+### Prerequisite
+- Java 17
+This project is written on java 17.  Download the latest version of java from: https://adoptium.net/
+
+### Clone the project
+````
+git clone https://github.com/rokon12/threat-visualizer-api.git
+````
+### Tools Setup
+The project can easily be setup on intelliJ IDEA. `File > Open ` and then find out the build.gradle file from the project directory and then select `Open as Project`
+That's it. 
+
+### How to run
+To run the project, you just have find out the main class which is `ThreatVisualizedApplication` from the IDE and run the main method using the IDE. 
+On the other hand, we can run it using `Gradle` as well.  From the command line go to the project root directory and run the following command- 
+```
+./gradlwe clean bootRun
+```
+
+
+## 
