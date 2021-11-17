@@ -46,7 +46,7 @@ public class AbuseConfidenceScoreServiceImpl implements AbuseConfidenceScoreServ
     private Feature toFeature(final AbuseConfidenceScore item) {
         return Feature.builder()
                       .geometry(Geometry.builder()
-                                        .type(Geometry.GeometryType.Point)
+                                        .type(Geometry.GeometryType.POINT)
                                         .coordinates(List.of(item.getLatitude(), item.getLongitude()))
                                         .build())
                       .properties(Properties.builder()

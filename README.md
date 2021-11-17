@@ -49,5 +49,6 @@ On the other hand, we can run it using `Gradle` as well.  From the command line 
 ./gradlwe clean bootRun
 ```
 
+## Usages 
 
-## 
+## Future work 

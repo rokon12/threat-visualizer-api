@@ -1,5 +1,6 @@
 package ca.bazlur.visualizer.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,6 +13,27 @@ public class Geometry {
     private GeometryType type;
 
     public enum GeometryType {
-        Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon;
+        POINT("Point"),
+        LINESTRING("LineString"),
+        POLYGON("Polygon"),
+        MULTI_POINT("MultiPoint"),
+        MULTI_LINE_STRING("MultiLineString"),
+        MULTI_POLYGON("MultiPolygon");
+
+        private final String name;
+
+        GeometryType(final String name) {
+            this.name = name;
+        }
+
+        @JsonValue
+        public String getName() {
+            return name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 }

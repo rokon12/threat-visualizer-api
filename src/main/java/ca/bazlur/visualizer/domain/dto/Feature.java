@@ -1,5 +1,6 @@
 package ca.bazlur.visualizer.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,11 +8,28 @@ import lombok.Data;
 @Builder
 public class Feature {
     @Builder.Default
-    private Feature.Type type = Type.Feature;
-    public Geometry geometry;
-    public Properties properties;
+
+    private Feature.Type type = Type.FEATURE;
+    private Geometry geometry;
+    private Properties properties;
 
     public enum Type {
-        Feature;
+        FEATURE("Feature");
+
+        private final String name;
+
+        Type(final String name) {
+            this.name = name;
+        }
+
+        @JsonValue
+        public String getName() {
+            return name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 }
