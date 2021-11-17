@@ -56,8 +56,23 @@ This page will bring a welcome page where we will find the link to the swagger a
 
 ![](.github/images/swagger.png)
 
+### Testing
+We have both unit test and integration test suites in the repo and both of them run with JUnit 5 and Mockito on top of the testing functionality spring boot provides.
+The following command will run the test cases with coverage: 
+
+```shell
+./gradlew testCoverage
+```
+#### Test Summery
+![](.github/images/testSummery.png)
+
+We can then checkout the coverage from the `build/reports/jacoco/test/html` directory.
+![](.github/images/testCoverage.png)
+
 ### CI/CD
 On each commit pull request to master, the CI/CD pipeline runs through GitHub Action. It runs the tests, does the code coverage checking and creates a badge, so the sonarqube analysis and then build the project.
+
+![](.github/images/githubActions.png)
 
 ### Usages 
 
