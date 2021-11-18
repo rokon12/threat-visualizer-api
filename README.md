@@ -70,6 +70,29 @@ We can then checkout the coverage from the `build/reports/jacoco/test/html` dire
 ![](.github/images/testCoverage.png)
 
 ### Configuration
+We can enable the job and configure jobs using the following key-value from the `application.properties`
+
+```properties
+abuse.confidence.score.fetch.jobs.enabled = false
+abuse.confidence.score.fetch.jobs.cron =0 0 0/6 1/1 * ?
+```
+Besides these, we can configure a range of other things, e.q a database. The project is built on top of a file-based h2 database.
+But we can always change it MySQL or any other Relational Database.
+
+```properties
+## H2 database
+spring.datasource.url=jdbc:h2:file:./h2db/local_db
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+# Hibernate config
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=false
+```
 
 ### CI/CD
 On each commit pull request to master, the CI/CD pipeline runs through GitHub Action. It runs the tests, does the code coverage checking and creates a badge, so the sonarqube analysis and then build the project.
