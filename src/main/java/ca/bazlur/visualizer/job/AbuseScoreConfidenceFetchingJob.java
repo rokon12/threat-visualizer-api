@@ -13,13 +13,11 @@ public class AbuseScoreConfidenceFetchingJob {
     private final AbuseConfidenceScoreFeedService confidenceScoreService;
     private final AbuseConfidenceScoreRepository abuseConfidenceScoreRepository;
 
-    @Scheduled(fixedRate = 100000)
+    @Scheduled(cron = "${abuse.confidence.score.fetch.jobs.cron}")
     public void fetchAbuseConfidenceScore() {
         log.info("Starting to fetch black listed ip address");
         var blackListedIps = confidenceScoreService.getBlackListedIps();
         log.info("Total black listed ip fetched: {}", blackListedIps.getData().size());
-
-
 
         var abuseConfidenceScores = blackListedIps.getData()
                                                   .parallelStream()

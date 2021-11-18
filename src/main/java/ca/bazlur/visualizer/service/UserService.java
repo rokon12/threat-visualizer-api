@@ -1,12 +1,18 @@
 package ca.bazlur.visualizer.service;
 
+import ca.bazlur.visualizer.config.security.JwtTokenUtil;
 import ca.bazlur.visualizer.domain.Role;
+import ca.bazlur.visualizer.domain.User;
+import ca.bazlur.visualizer.domain.dto.AuthRequest;
+import ca.bazlur.visualizer.domain.dto.AuthTokenView;
 import ca.bazlur.visualizer.domain.dto.CreateUserRequest;
 import ca.bazlur.visualizer.domain.dto.UserView;
 import ca.bazlur.visualizer.domain.mapper.DataMapper;
 import ca.bazlur.visualizer.repo.RoleRepository;
 import ca.bazlur.visualizer.repo.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -28,6 +34,8 @@ public class UserService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final DataMapper mapper;
     private final RoleRepository roleRepository;
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenUtil jwtTokenUtil;
 
     @Transactional
     public UserView create(CreateUserRequest request) {
@@ -44,6 +52,17 @@ public class UserService implements UserDetailsService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
         return mapper.toUserView(userRepository.save(user));
+    }
+
+    public AuthTokenView login(AuthRequest request) {
+        var authenticate = authenticationManager
+            .authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+        var user = (User) authenticate.getPrincipal();
+
+        return AuthTokenView.builder()
+                             .username(user.getUsername())
+                             .token(jwtTokenUtil.generateAccessToken(user))
+                             .build();
     }
 
     private Set<Role> getDefaultRole() {

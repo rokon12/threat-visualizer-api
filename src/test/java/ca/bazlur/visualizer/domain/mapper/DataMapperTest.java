@@ -3,14 +3,20 @@ package ca.bazlur.visualizer.domain.mapper;
 import ca.bazlur.visualizer.domain.User;
 import ca.bazlur.visualizer.domain.dto.AbuseConfidenceScoreDTO;
 import ca.bazlur.visualizer.domain.dto.CreateUserRequest;
+import ca.bazlur.visualizer.domain.dto.Feature;
+import ca.bazlur.visualizer.domain.dto.Geometry;
+import ca.bazlur.visualizer.util.TestDataSetup;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.time.OffsetDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
@@ -76,5 +82,18 @@ class DataMapperTest {
     void testToUserView_givenNull_shouldReturnNull() {
         var userView = mapper.toUserView(null);
         assertNull(userView);
+    }
+
+    @Test
+    void testToGeoJsonView() throws IOException, URISyntaxException {
+        var stream = TestDataSetup.prepareTestData().stream().limit(1);
+        var geoJsonView = mapper.toGeJsonView(stream);
+        assertNotNull(geoJsonView);
+        assertEquals("FeatureCollection", geoJsonView.getType());
+        assertEquals(1, geoJsonView.getFeatures().size());
+        assertEquals(Feature.Type.FEATURE, geoJsonView.getFeatures().get(0).getType());
+        assertEquals(2, geoJsonView.getFeatures().get(0).getGeometry().getCoordinates().size());
+        assertEquals(Geometry.GeometryType.POINT, geoJsonView.getFeatures().get(0).getGeometry().getType());
+        assertNotNull(geoJsonView.getFeatures().get(0).getProperties().getIp());
     }
 }

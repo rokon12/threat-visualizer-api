@@ -3,6 +3,7 @@ package ca.bazlur.visualizer.service;
 import ca.bazlur.visualizer.domain.AbuseConfidenceScore;
 import ca.bazlur.visualizer.domain.dto.Feature;
 import ca.bazlur.visualizer.domain.dto.SearchAbuseConfidenceScoreQuery;
+import ca.bazlur.visualizer.domain.mapper.DataMapperImpl;
 import ca.bazlur.visualizer.repo.AbuseConfidenceScoreRepository;
 import ca.bazlur.visualizer.util.TestDataSetup;
 import com.google.common.collect.Ordering;
@@ -40,7 +41,7 @@ class AbuseConfidenceScoreServiceTest {
     @BeforeEach
     void setUp() throws IOException, URISyntaxException {
         MockitoAnnotations.openMocks(this);
-        abuseConfidenceScoreService = new AbuseConfidenceScoreServiceImpl(abuseConfidenceScoreRepository);
+        abuseConfidenceScoreService = new AbuseConfidenceScoreServiceImpl(abuseConfidenceScoreRepository, new DataMapperImpl());
         testData = TestDataSetup.prepareTestData();
     }
 

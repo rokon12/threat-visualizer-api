@@ -1,6 +1,7 @@
 package ca.bazlur.visualizer.web;
 
 import ca.bazlur.visualizer.domain.dto.AuthRequest;
+import ca.bazlur.visualizer.domain.dto.AuthTokenView;
 import ca.bazlur.visualizer.domain.dto.CreateUserRequest;
 import ca.bazlur.visualizer.domain.dto.UserView;
 import ca.bazlur.visualizer.repo.UserRepository;
@@ -16,7 +17,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 import static ca.bazlur.visualizer.util.JsonHelper.fromJson;
 import static ca.bazlur.visualizer.util.JsonHelper.toJson;
@@ -66,16 +66,16 @@ class AuthenticationResourceTest {
         request.setUsername(userView.getUsername());
         request.setPassword(password);
 
-        MvcResult createResult = this.mockMvc
+        var createResult = this.mockMvc
             .perform(post("/api/v1/public/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(toJson(objectMapper, request)))
             .andExpect(status().isOk())
-            .andExpect(header().exists(HttpHeaders.AUTHORIZATION))
             .andReturn();
 
-        UserView authUserView = fromJson(objectMapper, createResult.getResponse().getContentAsString(), UserView.class);
-        assertEquals(userView.getId(), authUserView.getId(), "User ids must match!");
+        var authUserView = fromJson(objectMapper, createResult.getResponse().getContentAsString(), AuthTokenView.class);
+        assertEquals(userView.getUsername(), authUserView.getUsername(), "User name must match!");
+        assertNotNull(authUserView.getToken(), "Token must not null!");
     }
 
 

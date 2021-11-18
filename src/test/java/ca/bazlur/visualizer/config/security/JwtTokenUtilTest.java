@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -23,6 +24,7 @@ class JwtTokenUtilTest {
         jwtTokenUtil = new JwtTokenUtil();
         ReflectionTestUtils.setField(jwtTokenUtil, "jwtSecret", "std123");
         ReflectionTestUtils.setField(jwtTokenUtil, "jwtIssuer", "bazlur.ca");
+        ReflectionTestUtils.setField(jwtTokenUtil, "expiryDuration", 60 * 60 * 1000);
 
         user = User.builder()
                    .id(101)
@@ -53,7 +55,15 @@ class JwtTokenUtilTest {
     }
 
     @Test
-    void testValidate_invalidTokenThrowsException() {
-        assertFalse(jwtTokenUtil.validate(TOKEN+ "XYZ"));
+    void testValidate_invalidToken_shouldReturnFalse() {
+        assertFalse(jwtTokenUtil.validate(TOKEN + "XYZ"));
+    }
+
+    @Test
+    void testValidate_ExpiredToken_shouldReturnFalse() throws InterruptedException {
+        ReflectionTestUtils.setField(jwtTokenUtil, "expiryDuration", 1);
+        var token = jwtTokenUtil.generateAccessToken(user);
+        TimeUnit.SECONDS.sleep(2);
+        assertFalse(jwtTokenUtil.validate(token));
     }
 }

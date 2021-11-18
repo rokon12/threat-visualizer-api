@@ -5,17 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class AuthRequest {
-    @NotNull
-    @Email
+@NoArgsConstructor
+public class AuthTokenView {
     private String username;
-    @NotNull
-    private String password;
+    private String token;
 }

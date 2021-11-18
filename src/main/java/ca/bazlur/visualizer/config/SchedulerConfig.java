@@ -17,7 +17,7 @@ public class SchedulerConfig {
     private final AbuseConfidenceScoreRepository abuseConfidenceScoreRepository;
 
     @Bean
-    @ConditionalOnProperty(value = "jobs.enabled", havingValue = "true")
+    @ConditionalOnProperty(value = "abuse.confidence.score.fetch.jobs.enabled", havingValue = "true")
     public AbuseScoreConfidenceFetchingJob job() {
 
         return new AbuseScoreConfidenceFetchingJob(confidenceScoreService,
