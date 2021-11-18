@@ -66,7 +66,7 @@ class UserServiceTest {
         ReflectionTestUtils.setField(jwtTokenUtil, "jwtIssuer", "bazlur.ca");
         ReflectionTestUtils.setField(jwtTokenUtil, "expiryDuration", 60 * 60 * 1000);
 
-        userService = new UserService(userRepository, passwordEncoder,
+        userService = new UserServiceImpl(userRepository, passwordEncoder,
             dataMapper, roleRepository, authenticationManager, jwtTokenUtil);
     }
 

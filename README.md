@@ -69,6 +69,8 @@ The following command will run the test cases with coverage:
 We can then checkout the coverage from the `build/reports/jacoco/test/html` directory.
 ![](.github/images/testCoverage.png)
 
+> **Note**: The configuration classes are excluded from test coverage.
+
 ### Configuration
 We can enable the job and configure jobs using the following key-value from the `application.properties`
 

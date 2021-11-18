@@ -134,7 +134,7 @@ class AuthenticationResourceTest {
         userRequest.setPassword(password);
         userRequest.setRePassword(password);
 
-        var createResult = this.mockMvc
+        this.mockMvc
             .perform(post("/api/v1/public/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(toJson(objectMapper, userRequest)))

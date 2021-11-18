@@ -31,21 +31,21 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                                     final HttpServletResponse response,
                                     final FilterChain filterChain) throws ServletException, IOException {
         // Get authorization header and validate
-        final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
+        final var header = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (!hasText(header) || !header.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         }
 
         // Get jwt token and validate
-        final String token = header.split(" ")[1].trim();
+        final var token = header.split(" ")[1].trim();
         if (!jwtTokenUtil.validate(token)) {
             filterChain.doFilter(request, response);
             return;
         }
 
         // Get user identity and set it on the spring security context
-        UserDetails userDetails = userRepo
+        var userDetails = userRepo
             .findByUsername(jwtTokenUtil.getUsername(token))
             .orElse(null);
 
