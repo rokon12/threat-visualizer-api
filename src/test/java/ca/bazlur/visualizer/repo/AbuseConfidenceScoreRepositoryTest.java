@@ -85,11 +85,19 @@ class AbuseConfidenceScoreRepositoryTest {
                 .ipAddress("200.148.225.183")
                 .build());
 
-        System.out.println("confidenceScores = " + confidenceScores);
         assertEquals(1, confidenceScores.size());
         assertThat(confidenceScores, hasItem(Matchers.hasProperty("ipAddress", equalTo("200.148.225.183"))));
     }
 
+    @Test
+    void testSearchByCity() {
+        var confidenceScores = abuseConfidenceScoreRepository.search(0, 10, "city",
+            SearchAbuseConfidenceScoreQuery
+                .builder()
+                .city("London")
+                .build());
+        assertThat(confidenceScores, hasItem(Matchers.hasProperty("city", equalTo("London"))));
+    }
 
     @Test
     void testSearchByCountryPaged() {

@@ -69,6 +69,8 @@ The following command will run the test cases with coverage:
 We can then checkout the coverage from the `build/reports/jacoco/test/html` directory.
 ![](.github/images/testCoverage.png)
 
+### Configuration
+
 ### CI/CD
 On each commit pull request to master, the CI/CD pipeline runs through GitHub Action. It runs the tests, does the code coverage checking and creates a badge, so the sonarqube analysis and then build the project.
 
@@ -117,29 +119,11 @@ The response -
 
 ```shell
 {
-  "id": 3,
-  "username": "username@example.com",
-  "fullName": "The Full name"
+  "username": "bazlur@bazlur.ca",
+  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyLGJhemx1ckBiYXpsdXIuY2EiLCJpc3MiOiJiYXpsdXIuY2EiLCJpYXQiOjE2MzcyMDAxMDIsImV4cCI6MTYzNzgwNDkwMn0.x2-2WsumsbUlXmCpJz5A2B-RxWZ318rUzSThT6iu_jvgfUT9YG_CMG3JS50A1mxQGiT15z9bBLh1kBMwJP166g"
 }
 ```
-Response headers -
-
-```shell
- authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzLHVzZXJuYW1lQGV4YW1wbGUuY29tIiwiaXNzIjoiYmF6bHVyLmNhIiwiaWF0IjoxNjM3MTYzMjkzLCJleHAiOjE2Mzc3NjgwOTN9.tyFwvxL4wXHsIRr6hcexm6L4_FxSscPN7nW6P1NtGO5rV7U29lgsDKb4GXlEU1aU5FbNymXcSzQlNImmGuwslA 
- cache-control: no-cache,no-store,max-age=0,must-revalidate 
- connection: keep-alive 
- content-type: application/json 
- date: Wed,17 Nov 2021 15:34:53 GMT 
- expires: 0 
- keep-alive: timeout=60 
- pragma: no-cache 
- transfer-encoding: chunked 
- vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers 
- x-content-type-options: nosniff 
- x-frame-options: DENY 
- x-xss-protection: 1; mode=block 
-```
-From this response, we are primarily interested in the Authorization header. This is a JWT token that we need to pass on subsequent rest calls for the rest of the API.
+From this response, we are primarily interested in the `token`. This is a JWT token that we need to pass on subsequent rest calls for the rest of the API.
 
 We can authorize the Swagger with this token so that the next api call adds this automatically.
 
@@ -268,7 +252,7 @@ curl -X 'POST' \
 }'
 ```
 
-It can further filer, sort by input.
+It can further filer, sort by field for example, city, ip etc .
 
 ### Future work 
 
