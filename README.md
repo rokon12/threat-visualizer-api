@@ -11,10 +11,12 @@ Once a request is processed through a scheduled job, it then finds the geolocati
 
 Finally, the information is then exposed through a rest endpoint so that the application user consumes it. The APIs are protected.  So the authentication is required.
 
-
+## Design Decisions
 In terms of design decisions, simplicity and conventional usage took priority over complexity without speculation of future work.  The thought process is, we will cross the bridge when we will be there. For example, for the cache, we have just used the default cache provider of spring. In future, sure we can consider something more performant, such as Redis etc. 
 
 For security, spring security is a well-known one and easy to use, so we decided to go ahead with it. For database, we perhaps don't need a relational database for this application, a NoSQL one is more appropriate since we don't have much relation between various sets of data. The data from various sources ( vulnerability database) could very well be unstructured or semi-structured. so NoSql certainly does make sense here. Again, for simplicity, we used SQL here, it is just easy to use,  and spring data made it super useful. 
+
+There is plenty of room for further improvements which you eventually can do gradually as you progress.
 
 ### Test Coverage Report
 ![Coverage](.github/badges/jacoco.svg)
