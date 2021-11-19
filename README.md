@@ -1,5 +1,5 @@
 ## The Threat Visualizer API
-This is a simple backend application that fetches abuse IP threat score and finds out their geographical information and format to be displayed on a map through rest endpoints.
+This is a simple backend application that fetches abuse IP threat score, finds out their geographical information and format to be displayed on a map through rest endpoints.
 
 It publishes a restful API, which can be used for displaying information in, such as on a map, and then further sort & paged etc.
 It also provides rich endpoints to search for information.
@@ -9,10 +9,10 @@ The website has constraints on how many requests one particular user can make at
 
 Once a request is processed through a scheduled job, it then finds the geolocation based on the IP address using a local geolocation database. The database is available on [maxmind.com](https://www.maxmind.com/en/home). Then the information is stored in a local SQL database.
 
-Finally, the information is then exposed through a rest endpoint so that the application user consumes it. The APIs are protected.  So the authentication is required.
+Finally, the information is then exposed through a rest endpoint so that the application user consumes it. The APIs are protected, thus authentication is required.
 
 ## Design Decisions
-In terms of design decisions, simplicity and conventional usage took priority over complexity without speculation of future work.  The thought process is, we will cross the bridge when we will be there. For example, for the cache, we have just used the default cache provider of spring. In future, sure we can consider something more performant, such as Redis etc. 
+When it comes to design decisions, simplicity and conventional use took precedence over complexity without speculating on future work.  Also, the scope of the project is limited and we had a time constraint. If are given a larger scope and sufficient time, we might consider things differently. For example, for the cache, we have just used the default cache provider of spring. In future, sure we can consider something more performant, such as Redis etc. 
 
 For security, spring security is a well-known one and easy to use, so we decided to go ahead with it. For database, we perhaps don't need a relational database for this application, a NoSQL one is more appropriate since we don't have much relation between various sets of data. The data from various sources ( vulnerability database) could very well be unstructured or semi-structured. so NoSql certainly does make sense here. Again, for simplicity, we used SQL here, it is just easy to use,  and spring data made it super useful. 
 
@@ -29,7 +29,7 @@ There is plenty of room for further improvements which you eventually can do gra
 - JWT 
 - Spring Cache 
 - Lombok 
-- Junit 5
+- JUnit 5
 - Mockito 
 - Swagger Docs
 - Gradle
