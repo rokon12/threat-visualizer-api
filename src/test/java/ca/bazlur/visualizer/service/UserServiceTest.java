@@ -80,6 +80,8 @@ class UserServiceTest {
     private void createUserWithExistingUserName() {
         userService.create(CreateUserRequest.builder()
                                             .username(USERNAME)
+                                            .password("Test1234")
+                                            .rePassword("Test1234")
                                             .build());
     }
 

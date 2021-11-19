@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.ValidationException;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserView create(CreateUserRequest request) {
-        if (!request.getPassword().equals(request.getRePassword())) {
+        if (!Objects.equals(request.getPassword(), request.getRePassword())) {
             throw new ValidationException("Passwords don't match!");
         }
 
