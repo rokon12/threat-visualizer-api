@@ -27,7 +27,7 @@ public class RawDBDemoGeoIPLocationServiceImpl implements RawDBDemoGeoIPLocation
         }
     }
 
-    public Optional<GeoIPLocationDTO> getLocation(String ip) {
+    public Optional<GeoIPLocationDTO> getLocation(final String ip) {
         try {
             var response = dbReader.city(InetAddress.getByName(ip));
             var country = response.getCountry().getName();

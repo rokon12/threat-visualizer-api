@@ -39,12 +39,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserView create(CreateUserRequest request) {
-        if (userRepository.findByUsername(request.getUsername()).isPresent()) {
-            throw new ValidationException("Username exists!");
-        }
-
         if (!request.getPassword().equals(request.getRePassword())) {
             throw new ValidationException("Passwords don't match!");
+        }
+
+        if (userRepository.findByUsername(request.getUsername()).isPresent()) {
+            throw new ValidationException("Username exists!");
         }
 
         var user = mapper.toUser(request);
