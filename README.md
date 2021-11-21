@@ -177,85 +177,170 @@ And the response -
       "type": "Feature",
       "geometry": {
         "coordinates": [
-          41,
-          20
+          18.4968,
+          -12.4992
         ],
         "type": "Point"
       },
       "properties": {
-        "country": "Albania",
-        "score": 100,
+        "country": "Angola",
+        "score": 100.0,
         "city": null,
-        "ip": "217.21.147.112",
-        "lastReportedAt": "2021-11-15T19:47:27-05:00"
+        "ip": "41.72.61.67",
+        "lastReportedAt": "2021-11-15T17:23:21-05:00"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "coordinates": [
-          41,
-          20
+          -58.3845,
+          -34.6022
         ],
         "type": "Point"
       },
       "properties": {
-        "country": "Albania",
-        "score": 100,
+        "country": "Argentina",
+        "score": 100.0,
         "city": null,
-        "ip": "80.90.92.81",
-        "lastReportedAt": "2021-11-15T19:47:52-05:00"
+        "ip": "200.73.128.148",
+        "lastReportedAt": "2021-11-15T20:14:30-05:00"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "coordinates": [
-          41,
-          20
+          -60.6634,
+          -32.954
         ],
         "type": "Point"
       },
       "properties": {
-        "country": "Albania",
-        "score": 100,
+        "country": "Argentina",
+        "score": 100.0,
+        "city": "Rosario",
+        "ip": "181.117.202.166",
+        "lastReportedAt": "2021-11-15T19:47:37-05:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -60.0366,
+          -34.9039
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "country": "Argentina",
+        "score": 100.0,
+        "city": "Chivilcoy",
+        "ip": "186.33.235.81",
+        "lastReportedAt": "2021-11-15T19:39:21-05:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -58.3845,
+          -34.6022
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "country": "Argentina",
+        "score": 100.0,
         "city": null,
-        "ip": "77.247.89.85",
-        "lastReportedAt": "2021-11-15T18:19:46-05:00"
+        "ip": "190.221.151.226",
+        "lastReportedAt": "2021-11-15T20:14:15-05:00"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "coordinates": [
-          36.368,
-          6.6172
+          -58.3845,
+          -34.6022
         ],
         "type": "Point"
       },
       "properties": {
-        "country": "Algeria",
-        "score": 100,
-        "city": "Constantine",
-        "ip": "41.110.187.86",
-        "lastReportedAt": "2021-11-15T19:28:03-05:00"
+        "country": "Argentina",
+        "score": 100.0,
+        "city": null,
+        "ip": "200.73.138.136",
+        "lastReportedAt": "2021-11-15T20:15:23-05:00"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "coordinates": [
-          36.7546,
-          3.0521
+          -64.1848,
+          -31.3918
         ],
         "type": "Point"
       },
       "properties": {
-        "country": "Algeria",
-        "score": 100,
-        "city": "Belcourt",
-        "ip": "41.111.133.103",
-        "lastReportedAt": "2021-11-15T20:05:36-05:00"
+        "country": "Argentina",
+        "score": 100.0,
+        "city": "Córdoba",
+        "ip": "190.96.112.84",
+        "lastReportedAt": "2021-11-15T20:00:59-05:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -64.1848,
+          -31.3918
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "country": "Argentina",
+        "score": 100.0,
+        "city": "Córdoba",
+        "ip": "200.32.84.12",
+        "lastReportedAt": "2021-11-15T19:24:04-05:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -65.3417,
+          -26.7444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "country": "Argentina",
+        "score": 100.0,
+        "city": "Yerba Buena",
+        "ip": "201.253.99.210",
+        "lastReportedAt": "2021-11-15T19:42:40-05:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -58.4455,
+          -34.6049
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "country": "Argentina",
+        "score": 100.0,
+        "city": "Buenos Aires",
+        "ip": "190.210.166.140",
+        "lastReportedAt": "2021-11-15T17:59:13-05:00"
       }
     }
   ]
