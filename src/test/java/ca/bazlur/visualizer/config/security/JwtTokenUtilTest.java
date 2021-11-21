@@ -17,14 +17,13 @@ class JwtTokenUtilTest {
 
     private JwtTokenUtil jwtTokenUtil;
     private User user;
-    private final String TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJudWxsLGJhemx1ckBqdWdiZC5vcmciLCJpc3MiOiJiYXpsdXIuY2EiLCJpYXQiOjE2MzY4ODMxODIsImV4cCI6MTYzNzQ4Nzk4Mn0.l_yQeDS9rYYg5z1Fg5pMSn7I8lFCg6r2HAfeeH4GhyOoOMtOyTfV9pV48zs9K2Jnh7_s9agqrA2mLdTi3wCJAw";
-
+    private String TOKEN;
     @BeforeEach
     void setUp() {
         jwtTokenUtil = new JwtTokenUtil();
         ReflectionTestUtils.setField(jwtTokenUtil, "jwtSecret", "std123");
         ReflectionTestUtils.setField(jwtTokenUtil, "jwtIssuer", "bazlur.ca");
-        ReflectionTestUtils.setField(jwtTokenUtil, "expiryDuration", 60 * 60 * 1000);
+        ReflectionTestUtils.setField(jwtTokenUtil, "expiryDuration", 300000);
 
         user = User.builder()
                    .id(101)
@@ -34,6 +33,8 @@ class JwtTokenUtilTest {
                    .password("$2a$10$fkEvLyKmmcV/8WbuJqthWOZPwseCoQ6vPS.4R63uqgBzn0f1SdlV")
                    .createdAt(LocalDateTime.now())
                    .build();
+
+        TOKEN = jwtTokenUtil.generateAccessToken(user);
     }
 
     @Test
