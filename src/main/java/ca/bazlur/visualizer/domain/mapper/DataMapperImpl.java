@@ -68,7 +68,7 @@ public class DataMapperImpl implements DataMapper {
         return Feature.builder()
                       .geometry(Geometry.builder()
                                         .type(Geometry.GeometryType.POINT)
-                                        .coordinates(List.of(item.getLatitude(), item.getLongitude()))
+                                        .coordinates(List.of(item.getLongitude(), item.getLatitude()))
                                         .build())
                       .properties(Properties.builder()
                                             .score(item.getScore())

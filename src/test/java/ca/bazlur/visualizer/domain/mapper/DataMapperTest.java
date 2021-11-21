@@ -14,6 +14,7 @@ import org.springframework.test.context.ActiveProfiles;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -86,8 +87,9 @@ class DataMapperTest {
 
     @Test
     void testToGeoJsonView() throws IOException, URISyntaxException {
-        var stream = TestDataSetup.prepareTestData().stream().limit(1);
-        var geoJsonView = mapper.toGeJsonView(stream);
+        var abuseConfidenceScores = TestDataSetup.prepareTestData();
+        var abuseConfidenceScore = abuseConfidenceScores.get(0);
+        var geoJsonView = mapper.toGeJsonView(List.of(abuseConfidenceScore).stream());
         assertNotNull(geoJsonView);
         assertEquals("FeatureCollection", geoJsonView.getType());
         assertEquals(1, geoJsonView.getFeatures().size());
@@ -95,5 +97,7 @@ class DataMapperTest {
         assertEquals(2, geoJsonView.getFeatures().get(0).getGeometry().getCoordinates().size());
         assertEquals(Geometry.GeometryType.POINT, geoJsonView.getFeatures().get(0).getGeometry().getType());
         assertNotNull(geoJsonView.getFeatures().get(0).getProperties().getIp());
+        assertEquals(geoJsonView.getFeatures().get(0).getGeometry().getCoordinates().get(0), abuseConfidenceScore.getLongitude());
+        assertEquals(geoJsonView.getFeatures().get(0).getGeometry().getCoordinates().get(1), abuseConfidenceScore.getLatitude());
     }
 }
